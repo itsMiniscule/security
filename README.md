@@ -7,6 +7,14 @@ This Laravel application implements user authentication, ensuring that certain r
 - **User Registration**: Users can create an account to access protected routes.
 - **Persistent Authentication**: Users can remain logged in indefinitely using the "Remember Me" feature.
 
+## Posts Management
+- **Public Post Listing**: All posts are visible to every authenticated user.
+- **Creator Marker**: Each post displays a "Created by: [User Name]" marker so you know who created the post.
+- **CRUD Operations**: 
+  - **Create Post**: Authenticated users can create new posts.
+  - **Edit Post**: Users can edit posts they have created.
+  - **Delete Post**: Users can delete posts they have created.
+
 ## Installation
 ### Prerequisites
 Ensure you have the following installed:
@@ -77,6 +85,14 @@ Ensure you have the following installed:
       return view('dashboard');
   })->middleware('auth');
   ```
+### Posts Management Usage
+#### Viewing Posts
+After logging in, all posts created by any user are visible.
+Each post displays the title, content, and a marker showing the name of the creator (e.g., "Created by: John Doe").
+#### Managing Your Posts
+- **Create Post**: Use the "Create New Post" button to add a post.
+- **Edit Post**: Posts you have created can be edited by clicking the "Edit" button.
+- **Delete Post**: Posts you have created can be deleted by clicking the "Delete" button.
 
 ### Logout
 - Users can log out via `/logout`, which invalidates their session.
